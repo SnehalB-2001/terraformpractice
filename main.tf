@@ -26,7 +26,6 @@ resource random_string if{
     length=7
     upper=false
 }
-module "alpha" {
-  source  = "hashicorp/module/random"
-  version = "1.0.0"
+module "alpha"{
+    source="./modules/rando"
 }

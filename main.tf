@@ -6,6 +6,7 @@ resource random_string suffix{
 locals{
     environment_prefix="${var.application_name}-${var.env_name}"
 }
+
 resource random_string list{
     count=length(var.regions)
 
@@ -28,4 +29,13 @@ resource random_string if{
 }
 module "alpha"{
     source="./modules/rando"
+}
+
+module "regionA"{
+    source="./modules/regional-stamp"
+
+    region="westus"
+    name=""
+    min_node_counter=2
+    max_node_counter=5
 }

@@ -39,3 +39,10 @@ module "regionA"{
     min_node_counter=2
     max_node_counter=5
 }
+resource "random_pet" "rg_mypet"{
+    prefix=var.resource_group_name_prefix
+}
+resource "azurerm_resource_group" "my-rg"{
+    location=var.resource_group_location
+    name=random_pet.rg_mypet.id
+}

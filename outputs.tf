@@ -30,3 +30,6 @@ output "list" {
 output "map" {
   value=resource.random_string.map["eastus"].result
 }
+output "resource_group_name"{
+    value=azurerm_resource_group.my-rg.name
+}
